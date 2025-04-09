@@ -39,8 +39,8 @@ protected:
     
     float viewAngle;
     float aspectRatio;
-    float near;
-    float far;
+    float nearClip;
+    float farClip;
     
     bool mouseDown;
     glm::vec2 lastMousePos;

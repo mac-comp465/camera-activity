@@ -8,7 +8,7 @@ namespace basicgraphics{
 const float X_SCALE = 0.005;
 const float Y_SCALE = 0.005;
 
-Camera::Camera(glm::vec3 position, glm::vec3 forward, glm::vec3 up, float viewAngle, float aspectRatio, float near, float far) : position(position), viewAngle(viewAngle), aspectRatio(aspectRatio), near(near), far(far), mouseDown(false), lastMousePos(vec2(0.0)), lastTime(0), currentFrameTime(0) {
+Camera::Camera(glm::vec3 position, glm::vec3 forward, glm::vec3 up, float viewAngle, float aspectRatio, float near, float far) : position(position), viewAngle(viewAngle), aspectRatio(aspectRatio), nearClip(near), farClip(far), mouseDown(false), lastMousePos(vec2(0.0)), lastTime(0), currentFrameTime(0) {
     this->forward = normalize(forward);
     this->up = normalize(up);
 }
@@ -102,11 +102,11 @@ void Camera::setAspectRatio(float aspectRatio) {
 }
 
 void Camera::setNearClip(float nearClip) {
-    near = nearClip;
+    this->nearClip = nearClip;
 }
 
 void Camera::setFarClip(float farClip) {
-    far = farClip;
+    this->farClip = farClip;
 }
 
 }//namespace
